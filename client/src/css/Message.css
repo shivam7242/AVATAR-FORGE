@@ -1,0 +1,53 @@
+.message-container{
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+    /* width: 100%; */
+}
+.userMessage{
+    display: flex;
+    flex-direction: column;
+    margin:5px;
+    float: right;
+    /* right:0; */
+    /* position:absolute; */
+    /* justify-content: flex-end; */
+
+}
+.userMessageBox{
+    background-image: linear-gradient(to right, #66bdd1, #0f95d3);
+    right: 0;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 40%;
+    max-width: 40%;
+
+}
+.botMessage{
+    display: flex;
+    flex-direction: column;
+    margin:5px;
+    float: left;
+}
+.botMessageBox{
+    background-image: linear-gradient(to right,#0f95d3,#66bdd1);
+    width:40%;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 35%;
+    max-width: 40%;
+}
+
+.botMessageBox:hover {
+    transform: scale(1.1); /* Adjust the scale factor for zoom level */
+}
+
+.userMessageBox:hover {
+    transform: scale(1.1); /* Adjust the scale factor for zoom level */
+}
+
+.sender-id{
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+}
