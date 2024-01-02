@@ -1,20 +1,24 @@
 .chat-body{
     height:100%;
     width:100%;
-    /* padding: 10px; */
-    border: 1px solid #FFF;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin:10px
 }
 .chat-container{
     height:100%;
     width:100%;
+    padding: 10px;
     display:flex;
     flex-direction:column;
-    overflow: scroll;
-    margin-bottom: 60px;
+    overflow-y: scroll;
+    margin-bottom: 70px;
+    overflow-x:hidden;
+}
+.chat-container::-webkit-scrollbar {
+    display: none;
 }
 .query{
     bottom: 0;

@@ -47,14 +47,14 @@ var messages = [
 const Chats = () => {
   return (
     <div className='chat-body'>
-      <text className="heading">Test Messages</text>
+      <text className="heading">Chat with your Avatar</text>
       <div className="chat-container">
         {messages.map((message) =>  (
-      <Message message={message}/>
+          <Message message={message}/>
         ))}
-    </div>
-    <div className='query'>
-        <input className='input-text'/>
+      </div>
+      <div className='query'>
+        <input placeholder='Enter text here' className='input-text'/>
         <button className='search-query'>Go</button>
       </div>
     </div>
