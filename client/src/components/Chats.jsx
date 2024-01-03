@@ -3,8 +3,6 @@ import { MessageBox } from './MessageBox';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, RenderTexture, Text } from '@react-three/drei';
 // import { Daccord } from './Daccord';
-import { Application } from '@splinetool/runtime';
-import Spline from '@splinetool/react-spline';
 import Message from '../smallComponents/Message';
 import '../css/Chat.css'
 

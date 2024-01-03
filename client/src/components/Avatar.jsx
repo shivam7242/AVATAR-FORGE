@@ -3,7 +3,7 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 import scene from "../assets/test1.glb";
 import idleScene from "../animations/M_Standing_Idle_001.glb";
 import talkinScene from "../animations/M_Talking_Variations_001.glb";
-import { a } from "@react-spring/three";
+import welcomeScene from "../animations/expression/M_Standing_Expressions_001.glb";
 import * as THREE from "three";
 import { useControls } from "leva";
 import { useFrame, useLoader } from "@react-three/fiber";
@@ -31,6 +31,24 @@ export default function Model(props) {
   const  {nodes,scene}  = useGLTF(props.avatarUrl+'?morphTargets=Oculus Visemes');
   const {animations: idleAnimation} = useGLTF(idleScene);
   const { animations: talkingAnimation } = useGLTF(talkinScene);
+  const { animations: welcomeAnimation } = useGLTF(welcomeScene);
+
+
+  // const msg = new SpeechSynthesisUtterance();
+  // msg.volume = 1; // 0 to 1
+  // msg.rate = 1; // 0.1 to 10
+  // msg.pitch = 1.5; // 0 to 2
+  // msg.text  = "Look at me, I am talking";
+
+
+  // const voice = {
+  //   "name": "Daniel",
+  //   "lang": "en-GB"
+  // };
+  // // console.log(`Voice: ${voice.name} and Lang: ${voice.lang}`);
+  // msg.voiceURI = voice.name;
+  // msg.lang = voice.lang;
+  // speechSynthesis.speak(msg);
 
 
   const {
@@ -47,9 +65,11 @@ export default function Model(props) {
 
   idleAnimation[0].name = 'Idle';
   talkingAnimation[0].name = 'Talking';
-  const allAnimation = useAnimations([idleAnimation[0], talkingAnimation[0]], scene);
+  welcomeAnimation[0].name = 'Welcome';
+  const allAnimation = useAnimations([idleAnimation[0], talkingAnimation[0],welcomeAnimation[0]], scene);
   const {actions} = allAnimation;
   useEffect(() => {
+    setAnimation("Welcome");
     actions[animation].reset().play();
     return () => actions[animation].fadeOut(0.5);
   }, [animation]);
@@ -60,7 +80,7 @@ export default function Model(props) {
   useFrame(() => {
     const currentAudioTime = audio.currentTime;
     if (audio.paused || audio.ended) {
-      setAnimation("Idle");
+      setAnimation("Welcome");
       return;
     }
     Object.values(corresponding).forEach((value) => {
@@ -179,3 +199,4 @@ export default function Model(props) {
 
 useGLTF.preload(idleScene);
 useGLTF.preload(talkinScene);
+useGLTF.preload(welcomeScene);  
