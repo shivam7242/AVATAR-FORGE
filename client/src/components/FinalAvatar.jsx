@@ -42,7 +42,7 @@ const corresponding = {
 export default function FinalAvatar(props) {
   
   const [animation, setAnimation] = useState("Wellcome");
-  const [text, setText] = useState("Alphadroid brings the power of AI to elevate your user experience");
+  const [text, setText] = useState("Wellcome to Alphadroid. I am a Avatar Forge demo bot. How may I help you?");
   const [spell, setSpell] = useState("");
   const spellTime = useRef(0);
   const group = useRef();
@@ -196,9 +196,7 @@ export default function FinalAvatar(props) {
       nodes.Wolf3D_Teeth.morphTargetDictionary["viseme_I"]
     ] = 1;
     if (playAudio) {
-      const msg = generateAudio(
-        'Alphadroid brings the power of AI to elevate your user experience. We want to make service robots viable and affordable for every business. Hospitality is our starting point.'
-      );
+      const msg = generateAudio(text);
       const phonetics = metaphone(msg.text);
       setSpell(phonetics);
       speechSynthesis.speak(msg);
@@ -207,7 +205,7 @@ export default function FinalAvatar(props) {
     } else {
       // speechSynthesis.pause();
       // if(animation === 'Talking')
-      setAnimation("Idle");
+      setAnimation("Wellcome");
     }
   }, [playAudio]);
   useFrame((state) => {

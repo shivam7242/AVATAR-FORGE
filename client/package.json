@@ -15,6 +15,7 @@
     "@readyplayerme/react-avatar-creator": "^0.3.0",
     "@readyplayerme/visage": "^4.12.4",
     "body-parser": "^1.20.2",
+    "font-awesome": "^4.7.0",
     "leva": "^0.9.35",
     "node-fetch": "^3.3.2",
     "phonetics": "^1.0.7",

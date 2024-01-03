@@ -9,6 +9,7 @@ import { useNavigate ,useLocation} from 'react-router-dom';
 
 function Home() {
     const location = useLocation();
+    const [chats,setChats] = useState([]);
     const {avatarMode,avatarUrl} =location.state;
     const navigate = useNavigate();
     if(avatarMode || avatarUrl===''){
