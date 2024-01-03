@@ -16,14 +16,16 @@ function Home() {
     }
   return (
     <div style={{ height: "100vh", width: "100vw", display:'flex', flexDirection:'row'}}>
-        <div style={{flex:2}}> 
+        <div style={{flex:1}}> 
             <Chats />
         </div>
-    <Canvas shadows camera={{ position: [0,0,12], fov: 30 }} style={{flex:2}}>
-        <OrbitControls enableZoom={false}/>
-        <ambientLight intensity={4} />  
-        <FinalAvatar position={[0,-2.5,0]} scale={2.5} avatarUrl = {avatarUrl}/>
-    </Canvas>
+    <div style={{flex:1}}>
+        <Canvas shadows camera={{ position: [0,0,12], fov: 30 }} >
+            <OrbitControls enableZoom={false}/>
+            <ambientLight intensity={4} />  
+            <FinalAvatar position={[0,-2.5,0]} scale={2.5} avatarUrl = {avatarUrl}/>
+        </Canvas>
+    </div>
     </div>
   )
 }

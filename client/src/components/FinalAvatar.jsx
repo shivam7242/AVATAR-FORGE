@@ -51,7 +51,6 @@ export default function FinalAvatar(props) {
   const { nodes, scene } = useGLTF(
     props.avatarUrl + "?morphTargets=Oculus Visemes"
   );
-  console.log(nodes);
   const { animations: idleAnimation } = useGLTF(idleScene);
   const { animations: talkingAnimation } = useGLTF(talkinScene);
   const { animations: welcomeAnimation } = useGLTF(welcomeScene);
@@ -141,7 +140,6 @@ export default function FinalAvatar(props) {
     });
     for (let i = 0; i < spell.length; i++) {
       const mouthCue = spell[i];
-      console.log(corresponding[mouthCue]);
       if (
         currentAudioTime >= spellTime.current &&
         mouthCue in corresponding
@@ -204,10 +202,12 @@ export default function FinalAvatar(props) {
       const phonetics = metaphone(msg.text);
       setSpell(phonetics);
       speechSynthesis.speak(msg);
+      // speechSynthesis.resume();
       setAnimation("Talking");
     } else {
-        if(animation === 'Talking')
-          setAnimation("Idle");
+      // speechSynthesis.pause();
+      // if(animation === 'Talking')
+      setAnimation("Idle");
     }
   }, [playAudio]);
   useFrame((state) => {
