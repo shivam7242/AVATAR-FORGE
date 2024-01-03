@@ -1,362 +1,129 @@
 export var data = [
-    {
-      name: "Object1",
-      answer: "Answer for Object1",
-      questions: [
-        {
-          question: "What is the first question for Object1?",
-          answer: "Answer 1 for Object1",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object1?",
-              answer: "Answer 1 for Object1",
-            },
-            {
-              question: "What is the second sub-question for Object1?",
-              answer: "Answer 2 for Object1",
-            },
-            {
-              question: "What is the third sub-question for Object1?",
-              answer: "Answer 3 for Object1",
-            },
-          ],
-        },
-        {
-          question: "What is the second question for Object1?",
-          answer: "Answer 2 for Object1",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object1?",
-              answer: "Answer 1 for Object1",
-            },
-            {
-              question: "What is the second sub-question for Object1?",
-              answer: "Answer 2 for Object1",
-            },
-            {
-              question: "What is the third sub-question for Object1?",
-              answer: "Answer 3 for Object1",
-            },
-          ],
-        },
-        {
-          question: "What is the third question for Object1?",
-          answer: "Answer 3 for Object1",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object1?",
-              answer: "Answer 1 for Object1",
-            },
-            {
-              question: "What is the second sub-question for Object1?",
-              answer: "Answer 2 for Object1",
-            },
-            {
-              question: "What is the third sub-question for Object1?",
-              answer: "Answer 3 for Object1",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Object2",
-      answer: "Answer for Object2",
-      questions: [
-        {
-          question: "What is the first question for Object2?",
-          answer: "Answer 1 for Object2",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object2?",
-              answer: "Answer 1 for Object2",
-            },
-            {
-              question: "What is the second sub-question for Object2?",
-              answer: "Answer 2 for Object2",
-            },
-            {
-              question: "What is the third sub-question for Object2?",
-              answer: "Answer 3 for Object2",
-            },
-          ],
-        },
-        {
-          question: "What is the second question for Object2?",
-          answer: "Answer 2 for Object2",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object2?",
-              answer: "Answer 1 for Object2",
-            },
-            {
-              question: "What is the second sub-question for Object2?",
-              answer: "Answer 2 for Object2",
-            },
-            {
-              question: "What is the third sub-question for Object2?",
-              answer: "Answer 3 for Object2",
-            },
-          ],
-        },
-        {
-          question: "What is the third question for Object2?",
-          answer: "Answer 3 for Object2",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object2?",
-              answer: "Answer 1 for Object2",
-            },
-            {
-              question: "What is the second sub-question for Object2?",
-              answer: "Answer 2 for Object2",
-            },
-            {
-              question: "What is the third sub-question for Object2?",
-              answer: "Answer 3 for Object2",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Object3",
-      answer: "Answer for Object3",
-      questions: [
-        {
-          question: "What is the first question for Object3?",
-          answer: "Answer 1 for Object3",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object3?",
-              answer: "Answer 1 for Object3",
-            },
-            {
-              question: "What is the second sub-question for Object3?",
-              answer: "Answer 2 for Object3",
-            },
-            {
-              question: "What is the third sub-question for Object3?",
-              answer: "Answer 3 for Object3",
-            },
-          ],
-        },
-        {
-          question: "What is the second question for Object3?",
-          answer: "Answer 2 for Object3",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object3?",
-              answer: "Answer 1 for Object3",
-            },
-            {
-              question: "What is the second sub-question for Object3?",
-              answer: "Answer 2 for Object3",
-            },
-            {
-              question: "What is the third sub-question for Object3?",
-              answer: "Answer 3 for Object3",
-            },
-          ],
-        },
-        {
-          question: "What is the third question for Object3?",
-          answer: "Answer 3 for Object3",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object3?",
-              answer: "Answer 1 for Object3",
-            },
-            {
-              question: "What is the second sub-question for Object3?",
-              answer: "Answer 2 for Object3",
-            },
-            {
-              question: "What is the third sub-question for Object3?",
-              answer: "Answer 3 for Object3",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Object4",
-      answer: "Answer for Object4",
-      questions: [
-        {
-          question: "What is the first question for Object4?",
-          answer: "Answer 1 for Object4",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object4?",
-              answer: "Answer 1 for Object4",
-            },
-            {
-              question: "What is the second sub-question for Object4?",
-              answer: "Answer 2 for Object4",
-            },
-            {
-              question: "What is the third sub-question for Object4?",
-              answer: "Answer 3 for Object4",
-            },
-          ],
-        },
-        {
-          question: "What is the second question for Object4?",
-          answer: "Answer 2 for Object4",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object4?",
-              answer: "Answer 1 for Object4",
-            },
-            {
-              question: "What is the second sub-question for Object4?",
-              answer: "Answer 2 for Object4",
-            },
-            {
-              question: "What is the third sub-question for Object4?",
-              answer: "Answer 3 for Object4",
-            },
-          ],
-        },
-        {
-          question: "What is the third question for Object4?",
-          answer: "Answer 3 for Object4",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object4?",
-              answer: "Answer 1 for Object4",
-            },
-            {
-              question: "What is the second sub-question for Object4?",
-              answer: "Answer 2 for Object4",
-            },
-            {
-              question: "What is the third sub-question for Object4?",
-              answer: "Answer 3 for Object4",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Object5",
-      answer: "Answer for Object5",
-      questions: [
-        {
-          question: "What is the first question for Object5?",
-          answer: "Answer 1 for Object5",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object5?",
-              answer: "Answer 1 for Object5",
-            },
-            {
-              question: "What is the second sub-question for Object5?",
-              answer: "Answer 2 for Object5",
-            },
-            {
-              question: "What is the third sub-question for Object5?",
-              answer: "Answer 3 for Object5",
-            },
-          ],
-        },
-        {
-          question: "What is the second question for Object5?",
-          answer: "Answer 2 for Object5",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object5?",
-              answer: "Answer 1 for Object5",
-            },
-            {
-              question: "What is the second sub-question for Object5?",
-              answer: "Answer 2 for Object5",
-            },
-            {
-              question: "What is the third sub-question for Object5?",
-              answer: "Answer 3 for Object5",
-            },
-          ],
-        },
-        {
-          question: "What is the third question for Object5?",
-          answer: "Answer 3 for Object5",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object5?",
-              answer: "Answer 1 for Object5",
-            },
-            {
-              question: "What is the second sub-question for Object5?",
-              answer: "Answer 2 for Object5",
-            },
-            {
-              question: "What is the third sub-question for Object5?",
-              answer: "Answer 3 for Object5",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Object6",
-      answer: "Answer for Object6",
-      questions: [
-        {
-          question: "What is the first question for Object6?",
-          answer: "Answer 1 for Object6",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object6?",
-              answer: "Answer 1 for Object6",
-            },
-            {
-              question: "What is the second sub-question for Object6?",
-              answer: "Answer 2 for Object6",
-            },
-            {
-              question: "What is the third sub-question for Object6?",
-              answer: "Answer 3 for Object6",
-            },
-          ],
-        },
-        {
-          question: "What is the second question for Object6?",
-          answer: "Answer 2 for Object6",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object6?",
-              answer: "Answer 1 for Object6",
-            },
-            {
-              question: "What is the second sub-question for Object6?",
-              answer: "Answer 2 for Object6",
-            },
-            {
-              question: "What is the third sub-question for Object6?",
-              answer: "Answer 3 for Object6",
-            },
-          ],
-        },
-        {
-          question: "What is the third question for Object6?",
-          answer: "Answer 3 for Object6",
-          subQuestions: [
-            {
-              question: "What is the first sub-question for Object6?",
-              answer: "Answer 1 for Object6",
-            },
-            {
-              question: "What is the second sub-question for Object6?",
-              answer: "Answer 2 for Object6",
-            },
-            {
-              question: "What is the third sub-question for Object6?",
-              answer: "Answer 3 for Object6",
-            },
-          ],
-        },
-      ],
-    },
-  ];
+  {
+    id:1,
+    name:"Hotel Management",
+    output:"How may I help you?",
+    questions:[
+      {
+        id:1,
+        question:"Reservation Inquiry",
+        output:"Please provide your booking ID",
+        subquestion:[
+          {
+            id:1,
+            question:"Would you like to book a room or check availability for specific dates? Here are some rooms Available for upcoming dates.",
+            output:[
+              {
+                image:"https://www.usatoday.com/gcdn/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg",
+                descripton:"Deluxe Room",
+                price:"$100",
+                rating:4,
+                bookingstatus:false,
+                showyesno:false,
+              },
+              {
+                image:"https://www.usatoday.com/gcdn/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg",
+                descripton:"Deluxe Room",
+                price:"$100",
+                rating:4,
+                bookingstatus:false,
+                showyesno:false,
+              },
+              {
+                image:"https://www.usatoday.com/gcdn/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg",
+                descripton:"Deluxe Room",
+                price:"$100",
+                rating:4,
+                bookingstatus:false,
+                showyesno:false,
+              },
+            ]
+          },
+          {
+            id:2,
+            question:"Do you need assistance with making a reservation or modifying an existing one?",
+            output:[
+              {
+                image:"https://www.usatoday.com/gcdn/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg",
+                descripton:"Deluxe Room",
+                price:"$100",
+                rating:4,
+                bookingstatus:false,
+                showyesno:true,
+              },
+            ]
+          }
+        ]
+      },
+      {
+        id:2,
+        question:"Service Requests",
+        output:"Please provide your booking ID",
+      },
+      {
+        id:3,
+        question:"Check-out Assistance",
+        output:"Please provide your booking ID",
+      },
+      {
+        id:4,
+        question:"Feedback Collection",
+        output:"Please provide your valuable feedback",
+      }
+    ]
+  },
+  {
+    id:2,
+    name:"Library Management",
+    output:"How may I help you?",
+    questions:[
+      {
+        id:1,
+        question:"Reservation Inquiry",
+        output:"Please provide your booking ID",
+      },
+      {
+        id:2,
+        question:"Service Requests",
+        output:"Please provide your booking ID",
+      },
+      {
+        id:3,
+        question:"Check-out Assistance",
+        output:"Please provide your booking ID",
+      },
+      {
+        id:4,
+        question:"Feedback Collection",
+        output:"Please provide your valuable feedback",
+      }
+    ]
+  },
+  {
+    id:3,
+    name:"Office Management",
+    output:"How may I help you?",
+    questions:[
+      {
+        id:1,
+        question:"Reservation Inquiry",
+        output:"Please provide your booking ID",
+      },
+      {
+        id:2,
+        question:"Service Requests",
+        output:"Please provide your booking ID",
+      },
+      {
+        id:3,
+        question:"Check-out Assistance",
+        output:"Please provide your booking ID",
+      },
+      {
+        id:4,
+        question:"Feedback Collection",
+        output:"Please provide your valuable feedback",
+      }
+    ]
+  },
+]

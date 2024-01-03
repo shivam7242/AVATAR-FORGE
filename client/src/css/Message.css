@@ -1,6 +1,7 @@
 .message-container{
     margin:10px;
     width: 100%;
+    cursor: pointer;
 }
 .userMessage{
     display: flex;
