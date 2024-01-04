@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^1.0.17"
+    "@splinetool/runtime": "^1.0.17",
+    "react-hook-speech-to-text": "^0.8.0",
+    "react-speech-recognition": "^3.10.0"
   }
 }

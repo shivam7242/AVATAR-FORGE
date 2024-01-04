@@ -7,6 +7,9 @@ import Message from "../smallComponents/Message";
 import "../css/Chat.css";
 import { data } from "../data/question";
 import { ChatContext } from "../context/ChatContext";
+import { SpeakContext } from "../context/speakContext";
+import useSpeechRecognition from "../hooks/useSpeechRecognistionHook";
+
 
 var messages = [
   {
@@ -48,21 +51,28 @@ var messages = [
 
 
 const Chats = () => {
+  const {
+    text,
+    isListening,
+    startListening,
+    stopListening,
+    hasRecognitionSupport,
+  } = useSpeechRecognition();
+  const [micOn, setmicOn] = useState(false);
+  const {toSpeak,nextToSpeak} = useContext(SpeakContext);
   const [onBoarding, setOnBoarding] = useState(true);
   const [topic, setTopic] = useState('');
   const {chats,addChat,removeChat} = useContext(ChatContext);
   const [subtopic, setSubTopic] = useState('');
 
-
   return (
     <>
       <div className="chat-body">
-        
         <div style={{display:'flex',alignItems:'center' , justifyContent:'space-between', width:'100%'}}>
           <div style={{flex:1}}>
             <button onClick={()=>{setOnBoarding(true); removeChat()}} 
               style={{color:'#FFFFFF', backgroundColor:'white'}}>
-              <img style={{height:'20px',width:'20px'}}src={"../../public/backarrow.png"}/>
+              <img style={{height:'20px',width:'20px'}}src={"/backarrow.png"}/>
             </button>
           </div>
           <text className="heading">Chat with your Avatar</text>
@@ -77,7 +87,8 @@ const Chats = () => {
                 <div className="preset-question-body" style={{cursor:'pointer'}} 
                 onClick={()=> {setOnBoarding(false);
                 setTopic(question.name)
-                addChat({bot:true,question:question.name})
+                addChat({bot:true,question:question.name});
+                nextToSpeak(question.output);
                 }}>
                   <text className="question-heading">{question.name}</text>
                 </div>
@@ -87,16 +98,27 @@ const Chats = () => {
         ) : (
           <div className="chat-container">
             {data.map((temp) => (temp.name === topic && temp.questions.map((message) => (
-              <Message message={{...message, bot:true}} 
+              <Message message={{...message,bot:false}} 
               onClick={()=>{setSubTopic(message.question); addChat({bot:true,question:message.question})}}
               />
             ))))}
-            
           </div>
         )}
         <div className="query">
-          <input placeholder="Enter text here" className="input-text" />
-          <button className="search-query">Go</button>
+            <input placeholder="Enter text here" className="input-text" />
+        <button className="search-query"
+          onClick={() => {
+            setmicOn(!micOn)
+            !micOn ? startListening() : stopListening();
+          }}
+        >
+          { micOn ?
+          <img src="/micon.gif" style={{height:'50px', maxWidth:'100vw'}}/>
+          :
+          <img src= '/mic.png' style={{height:'20px',width:'22px',maxWidth:'100vw'}}/>
+          }
+        </button>
+        <button className="search-query">Go</button>
         </div>
       </div>
     </>
