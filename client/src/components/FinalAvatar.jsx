@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import scene from "../assets/test1.glb";
 import idleScene from "../animations/M_Standing_Idle_001.glb";
@@ -10,6 +10,7 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import demoaudio from "../assets/charlievoice.mp3";
 import jsonFile from "../assets/charlievoice.json";
 import Phonetics, { metaphone } from "phonetics";
+import { SpeakContext } from "../context/speakContext";
 const corresponding = {
   A: "viseme_aa",
   B: "viseme_E",
@@ -40,13 +41,33 @@ const corresponding = {
 };
 
 export default function FinalAvatar(props) {
-  
+  const {toSpeak,nextToSpeak} = useContext(SpeakContext);
   const [animation, setAnimation] = useState("Wellcome");
   const [text, setText] = useState("Wellcome to Alphadroid. I am a Avatar Forge demo bot. How may I help you?");
   const [spell, setSpell] = useState("");
   const spellTime = useRef(0);
   const group = useRef();
   const avatar = useRef();
+
+  useEffect(() => {
+    actions[animation].reset().play();
+    return () => actions[animation].fadeOut(0.5);
+  }, [animation]);
+
+  useEffect(() => {
+    if(toSpeak !== null){
+      setText(toSpeak);
+      nextToSpeak(null);
+      const msg = generateAudio(toSpeak);
+      const phonetics = metaphone(msg.text);
+      setSpell(phonetics);
+      speechSynthesis.speak(msg);
+    }
+    if(!speechSynthesis.speaking){
+      setAnimation("Idle");
+    }
+  
+  }, [toSpeak]);
 
   const { nodes, scene } = useGLTF(
     props.avatarUrl + "?morphTargets=Oculus Visemes"
@@ -91,21 +112,18 @@ export default function FinalAvatar(props) {
     scene
   );
   const { actions } = allAnimation;
-  useEffect(() => {
-    actions[animation].reset().play();
-    return () => actions[animation].fadeOut(0.5);
-  }, [animation]);
+  
 
 
   useFrame(() => {
+    
     const currentAudioTime = Date.now()/1000;
     if(currentAudioTime > spellTime.current + 0.3){
       spellTime.current = currentAudioTime+0.3;
+      setAnimation('Talking');
     }
     if ((speechSynthesis.paused || !speechSynthesis.speaking)) {
-      if(animation === 'Talking'){
-        setAnimation("Idle");
-      }
+      setAnimation("Idle");
       return;
     }
     Object.values(corresponding).forEach((value) => {

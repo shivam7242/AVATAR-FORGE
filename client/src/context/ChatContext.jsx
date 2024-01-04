@@ -1,10 +1,11 @@
 import { createContext, useEffect, useState } from "react";
 
+
 export const ChatContext = createContext();
 
 export const ChatContextProvider = ({children}) =>{
     const [chats,setChats] = useState(
-            localStorage.getItem("chats") || []
+        localStorage.getItem("chats") || []
     );
 
     const addChat = (message) =>{

@@ -23,7 +23,7 @@
 }
 .query{
     bottom: 0;
-    position:absolute;
+    position:fixed;
     display:flex;
     flex-direction:row;
     min-width: 50%;
@@ -38,6 +38,8 @@
     align-items:center;
     justify-content:center;
     /* margin: 10px; */
+    height: 50px;
+    width: 50px;
 }
 .input-text{
     background-color: transparent;
