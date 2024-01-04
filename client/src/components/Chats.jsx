@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState , useEffect} from "react";
 import { MessageBox } from "./MessageBox";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, RenderTexture, Text } from "@react-three/drei";
@@ -7,7 +7,7 @@ import Message from "../smallComponents/Message";
 import "../css/Chat.css";
 import { data } from "../data/question";
 import { ChatContext } from "../context/ChatContext";
-import { SpeakContext } from "../context/speakContext";
+import { SpeakContext } from "../context/SpeakContext";
 import useSpeechRecognition from "../hooks/useSpeechRecognistionHook";
 
 
@@ -64,7 +64,10 @@ const Chats = () => {
   const [topic, setTopic] = useState('');
   const {chats,addChat,removeChat} = useContext(ChatContext);
   const [subtopic, setSubTopic] = useState('');
-
+  useEffect(() => {
+    if(!isListening && text !== '') 
+      addChat({bot:false,question:text});
+  }, [text]);
   return (
     <>
       <div className="chat-body">
@@ -98,10 +101,11 @@ const Chats = () => {
         ) : (
           <div className="chat-container">
             {data.map((temp) => (temp.name === topic && temp.questions.map((message) => (
-              <Message message={{...message,bot:false}} 
+              <Message message={{...message,bot:true}} 
               onClick={()=>{setSubTopic(message.question); addChat({bot:true,question:message.question})}}
               />
             ))))}
+            
           </div>
         )}
         <div className="query">
@@ -118,7 +122,7 @@ const Chats = () => {
           <img src= '/mic.png' style={{height:'20px',width:'22px',maxWidth:'100vw'}}/>
           }
         </button>
-        <button className="search-query">Go</button>
+        <button className="search-query text-neutral-50">Go</button>
         </div>
       </div>
     </>

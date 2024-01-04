@@ -1,15 +1,12 @@
-import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import Avatar from "./Avatar";
 import { OrbitControls } from "@react-three/drei";
-import { ContactShadows, Environment } from "@react-three/drei";
 import FinalAvatar from "./FinalAvatar";
 import Chats from "./Chats";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Home() {
   const location = useLocation();
-  const [chats, setChats] = useState([]);
   const { avatarMode, avatarUrl } = location.state;
   const navigate = useNavigate();
   if (avatarMode || avatarUrl === "") {
